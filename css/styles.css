@@ -1602,3 +1602,30 @@ footer {
 .crisis-box ul li strong {
   color: var(--color-text-dark);
 }
+
+/* ── LEGAL CROSS-REFERENCE CALLOUT ───────────────────────── */
+.legal-also {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  background: rgba(106, 174, 232, 0.07);
+  border: 1px solid rgba(106, 174, 232, 0.2);
+  border-radius: var(--radius-sm);
+  padding: 0.7rem 1rem;
+  margin-bottom: 2rem;
+  font-size: 0.85rem;
+  color: var(--color-text-mid);
+  line-height: 1.65;
+}
+
+.legal-also a {
+  color: var(--color-brand-blue);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color 0.2s;
+}
+
+.legal-also a:hover {
+  color: var(--color-interactive);
+}
