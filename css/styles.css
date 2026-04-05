@@ -400,7 +400,7 @@ ul {
 /* Phone frame */
 .phone-frame {
   width: 270px;
-  height: 545px;
+  height: 552px; /* 545→552: corrected for iPhone 9:19.5 aspect ratio */
   background: linear-gradient(160deg, var(--color-slate) 0%, var(--color-night) 100%);
   border-radius: 36px;
   padding: 14px;
@@ -412,6 +412,20 @@ ul {
   position: relative;
   z-index: 2;
   flex-shrink: 0;
+}
+
+/* Home indicator bar (bottom bezel) */
+.phone-frame::after {
+  content: '';
+  position: absolute;
+  bottom: 7px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 38px;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.18);
+  border-radius: 3px;
+  z-index: 3;
 }
 
 /* Notch */
@@ -431,7 +445,7 @@ ul {
 .phone-screen {
   width: 100%;
   height: 100%;
-  border-radius: 24px;
+  border-radius: 22px; /* 24→22: matches 36px frame − 14px padding */
   overflow: hidden;
   position: relative;
   background: var(--color-pale);
@@ -452,6 +466,7 @@ ul {
   inset: 0;
   opacity: 0;
   transition: opacity 0.7s ease;
+  will-change: opacity;
 }
 
 .screen-slide.active {
@@ -459,6 +474,7 @@ ul {
 }
 
 .screen-slide img {
+  display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -468,26 +484,33 @@ ul {
 /* Carousel dots */
 .screen-dots {
   position: absolute;
-  bottom: 8px;
+  bottom: 10px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
-  gap: 5px;
-  z-index: 5;
+  gap: 6px;
+  z-index: 6;
+  background: rgba(8, 15, 26, 0.5);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 5px 9px;
+  border-radius: 20px;
 }
 
 .screen-dot {
-  width: 5px;
-  height: 5px;
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
   background: rgba(255,255,255,0.35);
   cursor: pointer;
-  transition: background 0.3s;
+  transition: background 0.3s, width 0.3s, border-radius 0.3s;
   border: none;
   padding: 0;
 }
 
 .screen-dot.active {
+  width: 16px;
+  border-radius: 3px;
   background: var(--color-sky);
 }
 
