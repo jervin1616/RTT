@@ -1338,3 +1338,267 @@ footer {
     padding: 4rem 1.25rem;
   }
 }
+
+/* ── PAGE HERO (inner-page banner) ───────────────────────── */
+.page-hero {
+  background: var(--color-night);
+  position: relative;
+  overflow: hidden;
+  padding: 8rem 2rem 5rem;
+}
+
+.page-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 70% 60% at 50% 40%, rgba(26, 63, 114, 0.5) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.page-hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(106, 174, 232, 0.12) 1px, transparent 1px);
+  background-size: 32px 32px;
+  pointer-events: none;
+}
+
+.page-hero-inner {
+  position: relative;
+  z-index: 1;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  width: 100%;
+}
+
+.page-hero .section-title {
+  color: var(--color-white);
+  font-size: clamp(2rem, 4.5vw, 3.2rem);
+}
+
+.page-hero .section-title em {
+  color: var(--color-sky);
+}
+
+.page-hero .section-lead {
+  color: rgba(184, 216, 244, 0.7);
+  margin-top: 0.5rem;
+}
+
+@media (max-width: 480px) {
+  .page-hero {
+    padding: 6rem 1.25rem 3rem;
+  }
+}
+
+/* Active nav link */
+.nav-links a[aria-current="page"] {
+  opacity: 1;
+  color: var(--color-sky);
+}
+
+/* ── LEGAL PAGES ──────────────────────────────────────────── */
+.legal-section {
+  background: var(--color-paper);
+  padding: var(--section-pad);
+}
+
+.legal-inner {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.legal-tabs {
+  display: flex;
+  gap: 0;
+  margin-bottom: 2.5rem;
+  border-bottom: 2px solid rgba(26, 63, 114, 0.12);
+}
+
+.legal-tab {
+  padding: 0.65rem 1.4rem;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 600;
+  background: transparent;
+  border: none;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -2px;
+  cursor: pointer;
+  color: var(--color-text-soft);
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.legal-tab:hover {
+  color: var(--color-brand-blue);
+}
+
+.legal-tab.active {
+  color: var(--color-brand-blue);
+  border-bottom-color: var(--color-brand-blue);
+}
+
+.legal-doc {
+  display: none;
+}
+
+.legal-doc.active {
+  display: block;
+}
+
+.legal-date {
+  font-size: 0.78rem;
+  color: var(--color-text-soft);
+  margin-bottom: 2.5rem;
+  display: block;
+}
+
+.legal-doc h2 {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--color-text-dark);
+  margin: 2.5rem 0 0.6rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(26, 63, 114, 0.08);
+}
+
+.legal-doc h2:first-of-type {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: none;
+}
+
+.legal-doc h3 {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-text-dark);
+  margin: 1.5rem 0 0.4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: 0.8rem;
+}
+
+.legal-doc p {
+  font-size: 0.93rem;
+  color: var(--color-text-mid);
+  line-height: 1.78;
+  margin-bottom: 0.9rem;
+}
+
+.legal-doc ul {
+  padding-left: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+.legal-doc ul li {
+  font-size: 0.93rem;
+  color: var(--color-text-mid);
+  line-height: 1.7;
+  margin-bottom: 0.35rem;
+  list-style: disc;
+}
+
+.legal-caps {
+  font-size: 0.86rem;
+  color: var(--color-text-mid);
+  line-height: 1.72;
+  font-weight: 500;
+  margin-bottom: 0.9rem;
+}
+
+/* ── CONTACT PAGE ─────────────────────────────────────────── */
+.contact-section {
+  background: var(--color-paper);
+  padding: var(--section-pad);
+}
+
+.contact-card {
+  max-width: 560px;
+  margin: 0 auto;
+  background: var(--color-white);
+  border-radius: var(--radius);
+  border: 1px solid rgba(26, 63, 114, 0.1);
+  box-shadow: 0 4px 24px rgba(13, 36, 68, 0.07);
+  padding: 2.5rem 2rem;
+  text-align: center;
+}
+
+.contact-card img {
+  height: 40px;
+  width: auto;
+  margin: 0 auto 1.5rem;
+}
+
+.contact-card h2 {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--color-text-dark);
+  margin-bottom: 0.6rem;
+}
+
+.contact-card p {
+  font-size: 0.94rem;
+  color: var(--color-text-mid);
+  line-height: 1.7;
+  margin-bottom: 1.25rem;
+}
+
+.contact-email {
+  display: inline-block;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-brand-blue);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  margin-bottom: 0.5rem;
+  transition: color 0.2s;
+}
+
+.contact-email:hover {
+  color: var(--color-interactive);
+}
+
+.contact-note {
+  font-size: 0.78rem;
+  color: var(--color-text-soft);
+  margin-bottom: 0;
+}
+
+.crisis-box {
+  background: rgba(200, 120, 58, 0.07);
+  border: 1px solid rgba(200, 120, 58, 0.22);
+  border-radius: var(--radius-sm);
+  padding: 1.1rem 1.25rem;
+  margin-top: 1.75rem;
+  text-align: left;
+}
+
+.crisis-box h3 {
+  color: var(--color-amber);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.6rem;
+}
+
+.crisis-box ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.crisis-box ul li {
+  font-size: 0.87rem;
+  color: var(--color-text-mid);
+  line-height: 1.6;
+  padding: 0.2rem 0;
+}
+
+.crisis-box ul li strong {
+  color: var(--color-text-dark);
+}
